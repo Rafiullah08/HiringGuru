@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Submission</title>
+    <link rel="stylesheet" href="overview.css">
+    <link rel="stylesheet" href="../style.css">
+  
+</head>
+<body>
+
+    <div class="nav-container">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-logo"> <a href="../index.html">HiringGuru</a></div>
+       
+            <div class="user-icon">
+                <a href="#">👤</a>
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="showSection('section1')" id="btn1">1. Overview</button>
+            <button onclick="showSection('section2')" id="btn2">2. Pricing</button>
+            <button onclick="showSection('section3')" id="btn3">3. Description</button>
+            <button onclick="showSection('section4')" id="btn4">4. Publish</button>
+        </div>
+
+        <div class="content">
+            <div class="section active" id="section1">
+                <div class="header">
+                    <h2>Overview</h2>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, at!</p>
+
+            </div>
+
+            <div class="section" id="section2">
+                <h2>Pricing</h2>
+                <button class="collapsible">Package</button>
+                <div class="collapsible-content">
+                    <div class="plan-container">
+                        <div class="plan" onclick="selectPlan(this)">
+                            <div class="plan-label">Basic</div>
+                            <div class="plan-details">
+                                <p>This service has limited features.</p>
+                            </div>
+                        </div>
+                        <div class="plan" onclick="selectPlan(this)">
+                            <div class="plan-label">Standard</div>
+                            <div class="plan-details">
+                                <p>This service has moderate features.</p>
+                            </div>
+                        </div>
+                        <div class="plan" onclick="selectPlan(this)">
+                            <div class="plan-label">Premium</div>
+                            <div class="plan-details">
+                                <p>This service has advanced features.</p>
+                            </div>
+                        </div>
+                        <p class="plan-note">Pricing may vary according to the offers provided by sellers. It's not mandatory that higher plans always cost more. Compare the features and packages offered to determine the best value for your needs.</p>
+                    </div>
+                </div>
+
+                <button class="collapsible">Delivery Time</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="delivery_time">Delivery Time</label>
+                        <input type="text" id="delivery_time" name="delivery_time">
+                    </div>
+                </div>
+
+                <button class="collapsible">Revisions</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="revisions">Revisions</label>
+                        <input type="text" id="revisions" name="revisions">
+                    </div>
+                </div>
+
+                <button class="collapsible">Add-ons</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="addons">Add-ons</label>
+                        <input type="text" id="addons" name="addons">
+                    </div>
+                </div>
+
+                <!-- Rename Milestones tab to Price -->
+                <button class="collapsible">Price</button>
+                <div class="collapsible-content">
+                    <table class="milestone-table" id="milestoneTable">
+                        <thead>
+                            <tr>
+                                <th>Milestone</th>
+                                <th>Duration (hours)</th>
+                                <th>Cost</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true" data-label="Milestone">3 logo concepts</td>
+                                <td data-label="Duration (hours)"><input type="number" class="hours" value="72" min="0" onchange="updateTotals()"></td>
+                                <td contenteditable="true" data-label="Cost">$52</td>
+                                <td data-label="Action"><button onclick="deleteRow(this)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true" data-label="Milestone">Chosen logo sketch</td>
+                                <td data-label="Duration (hours)"><input type="number" class="hours" value="48" min="0" onchange="updateTotals()"></td>
+                                <td contenteditable="true" data-label="Cost">$60</td>
+                                <td data-label="Action"><button onclick="deleteRow(this)">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true" data-label="Milestone">Final logo design</td>
+                                <td data-label="Duration (hours)"><input type="number" class="hours" value="48" min="0" onchange="updateTotals()"></td>
+                                <td contenteditable="true" data-label="Cost">$50</td>
+                                <td data-label="Action"><button onclick="deleteRow(this)">Delete</button></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="total" data-label="Total">
+                                    Total: <span id="totalHours">168 hours</span> | $<span id="totalCost">162</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="add-milestone" onclick="addMilestone()">
+                        <span>&#43; Add a Milestone</span>
+                    </div>
+                    <div class="footer-text">
+                        You'll receive payment for each milestone after it's marked as completed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="section3">
+                <h2>Description</h2>
+                <button class="collapsible">Service Detail</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="service_detail">Service Detail</label>
+                        <textarea id="service_detail" name="service_detail" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <button class="collapsible">FAQs</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="faqs">FAQs</label>
+                        <textarea id="faqs" name="faqs" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <button class="collapsible">Requirements</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="description_requirements">Requirements</label>
+                        <textarea id="description_requirements" name="description_requirements" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="section4">
+                <h2>Publish</h2>
+                <button class="collapsible">Review</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="review">Review</label>
+                        <textarea id="review" name="review" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <button class="collapsible">Promote</button>
+                <div class="collapsible-content">
+                    <div class="form-group">
+                        <label for="promote">Promote</label>
+                        <textarea id="promote" name="promote" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="overview.js"></script>
+</body>
+</html>

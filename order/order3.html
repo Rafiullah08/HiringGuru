@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Workflow</title>
+    <link rel="stylesheet" href="order3.css">
+</head>
+<body>
+    <button class="toggle-button" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <button onclick="showSection('section1')" id="btn1">1. Order Placement</button>
+        <button onclick="showSection('section2')" id="btn2">2. Order Confirmation</button>
+        <button onclick="showSection('section3')" id="btn3">3. Order Processing</button>
+        <button onclick="showSection('section4')" id="btn4">4. Delivery</button>
+        <button onclick="showSection('section5')" id="btn5">5. Order Completion</button>
+        <button onclick="showSection('section6')" id="btn6">6. Post-Order</button>
+    </div>
+    <div class="content" id="content">
+        <!-- <h1>Fiverr Order Workflow</h1> -->
+        
+        <div class="section active" id="section1">
+            <h2>1. Order Placement</h2>
+            <div class="step">
+                <div class="step-icon">🛒</div>
+                <div class="step-content">
+                    <h3>Gig Selection</h3>
+                    <p><strong>Gig:</strong> <a href="#">Logo Design by JohnDoeDesigns</a></p>
+                    <p><strong>Description:</strong> Professional logo design tailored to your brand's identity.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">📦</div>
+                <div class="step-content">
+                    <h3>Package Selection</h3>
+                    <p><strong>Selected Package:</strong> Premium</p>
+                    <p><strong>Includes:</strong></p>
+                    <ul>
+                        <li>3 Logo Concepts</li>
+                        <li>High-Resolution Files</li>
+                        <li>Source Files</li>
+                        <li>Unlimited Revisions</li>
+                        <li>5 Days Delivery</li>
+                    </ul>
+                    <p><strong>Price:</strong> $100</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">⚙️</div>
+                <div class="step-content">
+                    <h3>Customization</h3>
+                    <p><strong>Additional Services:</strong></p>
+                    <ul>
+                        <li>Fast Delivery (2 Days) - $20</li>
+                        <li>Social Media Kit - $30</li>
+                    </ul>
+                    <p><strong>Total Customization Cost:</strong> $50</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">📝</div>
+                <div class="step-content">
+                    <h3>Order Summary</h3>
+                    <p><strong>Base Package:</strong> $100</p>
+                    <p><strong>Customization:</strong> $50</p>
+                    <p class="total-price">Total Price: $150</p>
+                    <a href="#" class="btn">Place Order</a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <h2>2. Order Confirmation</h2>
+            <div class="step">
+                <div class="step-icon">📩</div>
+                <div class="step-content">
+                    <h3>Order Confirmation</h3>
+                    <p>Your order has been placed successfully!</p>
+                    <p>Order ID: <strong>#123456</strong></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">💬</div>
+                <div class="step-content">
+                    <h3>Message from Seller</h3>
+                    <p><strong>JohnDoeDesigns:</strong> Thank you for your order! Please provide any additional information or files needed to get started.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <h2>3. Order Processing</h2>
+            <div class="step">
+                <div class="step-icon">🔄</div>
+                <div class="step-content">
+                    <h3>Processing Order</h3>
+                    <p>The seller is currently working on your order. You can track the progress and communicate with the seller if needed.</p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" style="width: 50%;"></div>
+                    </div>
+                    <p>Progress: 50%</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">💬</div>
+                <div class="step-content">
+                    <h3>Chat with Seller</h3>
+                    <div class="chat-container">
+                        <div class="chat-message buyer"><strong>You:</strong> Can you make sure the logo is in blue and white?</div>
+                        <div class="chat-message seller"><strong>JohnDoeDesigns:</strong> Absolutely! I'll make the adjustments.</div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type your message...">
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section4">
+            <h2>4. Delivery</h2>
+            <div class="step">
+                <div class="step-icon">📦</div>
+                <div class="step-content">
+                    <h3>Delivery</h3>
+                    <p>The seller has delivered the order. Please review the files and provide feedback.</p>
+                    <a href="#" class="btn">Download Files</a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">✅</div>
+                <div class="step-content">
+                    <h3>Approve or Request Revision</h3>
+                    <p>If you are satisfied with the delivery, you can approve the order. If not, request a revision from the seller.</p>
+                    <a href="#" class="btn">Approve</a>
+                    <a href="#" class="btn">Request Revision</a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section5">
+            <h2>5. Order Completion</h2>
+            <div class="step">
+                <div class="step-icon">🎉</div>
+                <div class="step-content">
+                    <h3>Order Completed</h3>
+                    <p>Thank you for your order! Please leave a review for the seller.</p>
+                    <a href="#" class="btn">Leave a Review</a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">🕒</div>
+                <div class="step-content">
+                    <h3>Timer for Revisions</h3>
+                    <p>You have <span class="timer">48:00:00</span> to request any revisions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section6">
+            <h2>6. Post-Order</h2>
+            <div class="step">
+                <div class="step-icon">🔄</div>
+                <div class="step-content">
+                    <h3>Post-Order Actions</h3>
+                    <p>Thank you for your purchase! Explore more services or get in touch with the seller for any further assistance.</p>
+                    <a href="#" class="btn">Explore More Services</a>
+                    <a href="#" class="btn">Contact Seller</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="order3.js"></script>
+</body>
+</html>
